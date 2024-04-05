@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estoque Master - Produtos</title>
+    <link rel="stylesheet" href="../css/product_styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Estoque Master - Produtos</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Painel</a></li>
+        <li><a href="./product_page.html">Produtos</a></li>
+        <li><a href="#">Vendas</a></li>
+        <li><a href="#">Pedidos</a></li>
+        <li><a href="#">Clientes</a></li>
+        <li><a href="#">Fornecedores</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div id="form-container">
+        <h2>Novo Produto</h2>
+        <form id="product-form">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="description">Descrição:</label>
+          <textarea id="description" name="description"></textarea>
+          <label for="code">Código:</label>
+          <input type="text" id="code" name="code" required />
+          <label for="price">Preço:</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            step="0.01"
+            min="0"
+            required
+          />
+          <label for="quantity">Quantidade em Estoque:</label>
+          <input type="number" id="quantity" name="quantity" min="0" required />
+          <button type="submit">Adicionar Produto</button>
+        </form>
+      </div>
+      <div id="product-list">
+        <h2>Lista de Produtos</h2>
+        <ul id="products"></ul>
+      </div>
+    </main>
+    <footer class="footer-content">
+      <p>&copy; 2024 Estoque Master. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../js/product_script.js"></script>
+  </body>
+</html>
