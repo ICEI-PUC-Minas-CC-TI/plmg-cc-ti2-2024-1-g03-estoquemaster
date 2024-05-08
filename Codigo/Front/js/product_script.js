@@ -68,3 +68,22 @@ document.addEventListener("DOMContentLoaded", function () {
     addProduct(name, description, code, price, quantity);
   });
 });
+
+function selectImage() {
+  document.getElementById('fileInput').click();
+}
+
+function changeImage() {
+  document.getElementById('fileInput').click();
+}
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(e) {
+      const img = document.getElementById('image');
+      img.src = e.target.result;
+      document.getElementById('btnChange').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});

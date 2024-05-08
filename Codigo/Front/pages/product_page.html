@@ -8,41 +8,46 @@
   </head>
   <body>
     <header>
-      <h1>Estoque Master - Produtos</h1>
-    </header>
-    <nav>
+      <h1>Estoque Master</h1>
       <ul>
         <li><a href="../index.html">Painel</a></li>
         <li><a href="./product_page.html">Produtos</a></li>
         <li><a href="#">Vendas</a></li>
         <li><a href="#">Pedidos</a></li>
         <li><a href="#">Clientes</a></li>
-        <li><a href="#">Fornecedores</a></li>
+        <li><img src="./img/ico_config.svg" alt=""></li>
+      </ul>
+    </header>
+    <nav>
+      <ul>
+        
       </ul>
     </nav>
     <main>
-      <div id="form-container">
-        <h2>Novo Produto</h2>
-        <form id="product-form">
-          <label for="name">Nome:</label>
-          <input type="text" id="name" name="name" required />
-          <label for="description">Descrição:</label>
-          <textarea id="description" name="description"></textarea>
-          <label for="code">Código:</label>
-          <input type="text" id="code" name="code" required />
-          <label for="price">Preço:</label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            step="0.01"
-            min="0"
-            required
-          />
-          <label for="quantity">Quantidade em Estoque:</label>
-          <input type="number" id="quantity" name="quantity" min="0" required />
-          <button type="submit">Adicionar Produto</button>
-        </form>
+      <div id="main">
+        <div id="ImageProd">
+            <div id="container" onclick="selectImage()">
+              <input type="file" id="fileInput" style="display: none;">
+              <img id="image" src="" alt="">
+          </div>
+          <button id="btnChange" onclick="changeImage()">Trocar Imagem</button>
+        </div>
+        <div id="form-container">
+          <h2>Novo Produto</h2>
+          <form id="product-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="description">Descrição:</label>
+            <textarea id="description" name="description"></textarea>
+            <label for="code">Código:</label>
+            <input type="text" id="code" name="code" required />
+            <label for="price">Preço:</label>
+            <input type="number" id="price" name="price" step="0.01" min="0" required />
+            <label for="quantity">Quantidade em Estoque:</label>
+            <input type="number" id="quantity" name="quantity" min="0" required />
+            <button type="submit">Adicionar Produto</button>
+          </form>
+        </div>
       </div>
       <div id="product-list">
         <h2>Lista de Produtos</h2>
