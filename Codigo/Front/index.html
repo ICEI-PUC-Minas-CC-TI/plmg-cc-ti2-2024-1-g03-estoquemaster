@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estoque Master - Painel</title>
     <link rel="stylesheet" href="./css/dashboard_styles.css" />
+    <link rel="stylesheet" href="./css/sidebar_styles.css" />
   </head>
   <body>
     <header>
       <h1>Estoque Master</h1>
-      <ul>
-        <li><a href="index.html">Painel</a></li>
-        <li><a href="pages/product_page.html">Produtos</a></li>
-        <li><a href="#">Vendas</a></li>
-        <li><a href="#">Pedidos</a></li>
-        <li><a href="#">Clientes</a></li>
+      <button id="openSidebar"><img src="./img/ico_config.svg" alt=""></button>
+      <div id="sidebar" class="sidebar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/product_page.html">Produtos</a></li>
+          <li><a href="#">Vendas</a></li>
+          <li><a href="#">Pedidos</a></li>
+          <li><a href="#">Clientes</a></li>
+        </ul>
+        <ul>
+          <li><a href="pages/login_page.html">Login</a></li>
+          <li><a href="pages/signUp_page.html">Cadastro</a></li>
       </ul>
+      </div>
     </header>
     <nav>
       <ul>
@@ -61,6 +69,7 @@
     </main>
     <footer class="footer-content">
       <p>&copy; 2024 Estoque Master. Todos os direitos reservados.</p>
+      <script src="./js/sidebar_script.js"></script>
     </footer>
   </body>
 </html>
