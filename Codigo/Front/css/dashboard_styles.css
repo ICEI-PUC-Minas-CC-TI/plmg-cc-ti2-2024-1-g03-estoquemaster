@@ -1,47 +1,57 @@
+:root{
+  --header-background-blue: #007bff;
+  --background2-blue: #f4f4f4;
+
+  --font-white: white;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: var(--background2-blue);
 }
 
 header {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--header-background-blue);
+  color: var(--font-white);
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
   text-align: center;
-  padding: 20px 0;
+  padding: 1em 2em;
 }
 
 h1 {
   margin: 0;
 }
 
-nav {
-  background-color: #f4f4f4;
-  padding: 10px 0;
-}
-
-nav ul {
+header ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-nav ul li {
+ul li {
   display: inline;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
   font-weight: bold;
+  margin-right: 0.5em;
+
 }
 
-nav ul li a:hover {
-  color: #007bff;
+ul li a{
+  text-decoration: none;
+  color: var(--font-white);
+  
+  transform: easy 0.5s  all;
 }
+
+ul li a:hover{
+  color: black;
+}
+
+
 
 main {
   padding: 20px;
