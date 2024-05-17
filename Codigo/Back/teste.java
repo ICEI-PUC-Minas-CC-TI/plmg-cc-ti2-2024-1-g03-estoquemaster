@@ -4,6 +4,7 @@ import java.util.*;
     Definicao do tipo usuario
 */
 class Usuario {
+    public static Scanner sc = new Scanner(System.in);
     // atributos
     private String nome;
     private String email;
@@ -59,10 +60,13 @@ class Usuario {
         cadastrar_Usuario() - funcao para cadastrar novo Usuario
     */
     public void cadastrar_Usuario() {
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite nome: ");
         String nome = sc.nextLine();
+        System.out.println("Digite email: ");
         String email = sc.nextLine();
+        System.out.println("Digite senha: ");
         String senha = sc.nextLine();
+        System.out.println("Digite id: ");
         int id = sc.nextInt();
         sc.nextLine();
 
@@ -80,8 +84,8 @@ class Usuario {
     */
     public boolean login_Usuario(String email, String senha) {
         boolean resp = false;
-        if(this.senha == senha) {
-            if(this.email == email) {
+        if(this.senha.compareTo(senha) == 0) {
+            if(this.email.compareTo(email) == 0) {
                 resp = true;
             }
         }
@@ -94,6 +98,7 @@ class Usuario {
     Definicao do tipo produto
 */
 class Produto {
+    public static Scanner sc = new Scanner(System.in);
     // atributos
     private String nome;
     private int id;
@@ -170,23 +175,28 @@ class Produto {
         cadastrar_Produto() - funcao que realiza cadastro de novo produto
     */
     public void cadastrar_Produto() {
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite nome do produto: ");
         String nome = sc.nextLine();
+        System.out.println("Digite id do produto: ");
         int id = sc.nextInt();
         sc.nextLine();
+        System.out.println("Digite preco co produto: ");
         double preco = sc.nextDouble();
         sc.nextLine();
+        System.out.println("Digite a quantidade que sera cadastrada: ");
         int quantidade = sc.nextInt();
         sc.nextLine();
+        System.out.println("Digite seu id de Usuario: ");
         int id_Usuario = sc.nextInt();
         sc.nextLine();
+        System.out.println("Digite o id da Categoria do produto: ");
         int id_Categoria = sc.nextInt();
         sc.nextLine();
 
         this.nome = nome;
         this.id = id;
         this.preco = preco;
-        this.quantidade = quantidade;
+        this.quantidade += quantidade;
         this.id_Usuario = id_Usuario;
         this.id_Categoria = id_Categoria;
     } // end cadastrar_Produto()
@@ -237,6 +247,11 @@ class Categorias extends Produto {
 
 class teste {
     public static void main(String args[]) {
-        System.out.println("Hello World!");
+        Usuario usuario = new Usuario();
+        usuario.cadastrar_Usuario();
+        System.out.println(usuario.getNome() + " " + usuario.getEmail() + " " + usuario.getSenha() + " " + usuario.getId());
+        Produto produto = new Produto();
+        produto.cadastrar_Produto();
+        produto.mostrarProduto();
     }
 }
