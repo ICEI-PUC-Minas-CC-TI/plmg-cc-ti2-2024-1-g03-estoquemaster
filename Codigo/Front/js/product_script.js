@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const productForm = document.getElementById("product-form");
+  const image = document.getElementById("container");
   const productList = document.getElementById("products");
 
   // Array para armazenar os produtos
@@ -14,17 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
     products.forEach(function (product, index) {
       const li = document.createElement("li");
       li.innerHTML = `
-                <span>${product.name} - ${product.description} - ${product.code} - ${product.price} - ${product.quantity}</span>
-                <button onclick="editProduct(${index})">Editar</button>
-                <button onclick="deleteProduct(${index})">Excluir</button>
-            `;
+                <div class="product">
+                  <img src="${product.image}" alt="${product.name}" />
+                  <span>${product.name}</span>
+                  <span>${product.description}</span>
+                  <span>${product.code}</span>
+                  <span>${product.price}</span>
+                  <span>${product.quantity}</span>
+                  <button onclick="editProduct(${index})">Editar</button>
+                  <button onclick="deleteProduct(${index})">Excluir</button>
+                </div>
+                `;
       productList.appendChild(li);
     });
   }
 
   // Função para adicionar um novo produto
-  function addProduct(name, description, code, price, quantity) {
+  function addProduct(image, name, description, code, price, quantity) {
     const product = {
+      image: image,
       name: name,
       description: description,
       code: code,
@@ -40,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.editProduct = function (index) {
     const product = products[index];
     // Preencher o formulário com os detalhes do produto selecionado para edição
+    document.getElementById("image").src = product.image;
     document.getElementById("name").value = product.name;
     document.getElementById("description").value = product.description;
     document.getElementById("code").value = product.code;
@@ -60,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener para submissão do formulário de produto
   productForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Impede o envio do formulário
+    const image = document.getElementById("image").src;
     const name = document.getElementById("name").value;
     const description = document.getElementById("description").value;
     const code = document.getElementById("code").value;
