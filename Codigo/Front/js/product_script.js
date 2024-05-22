@@ -30,20 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+
   // Função para adicionar um novo produto
-  function addProduct(image, name, description, code, price, quantity) {
-    const product = {
-      image: image,
-      name: name,
-      description: description,
-      code: code,
-      price: price,
-      quantity: quantity,
-    };
-    products.push(product);
-    renderProducts();
-    productForm.reset(); // Limpar o formulário após adicionar o produto
-  }
+function addProduct(image, name, description, code, price, quantity) {
+  const product = {
+    image: image,
+    name: name,
+    description: description,
+    code: code,
+    price: price,
+    quantity: quantity,
+  };
+  products.push(product);
+  renderProducts();
+  productForm.reset(); // Limpar o formulário após adicionar o produto
+}
 
   // Função para editar um produto
   window.editProduct = function (index) {
@@ -88,13 +90,21 @@ function changeImage() {
   document.getElementById('fileInput').click();
 }
 
-document.getElementById('fileInput').addEventListener('change', function(event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function(e) {
-      const img = document.getElementById('image');
-      img.src = e.target.result;
-      document.getElementById('btnChange').style.display = 'block';
-  };
-  reader.readAsDataURL(file);
+//Tratamento da imagem
+const campoImagem = document.getElementById('campoImagem');
+const btnAddImg = document.getElementById('btnAddImg');
+
+btnAddImg.addEventListener('click', function() {
+  const inputImagem = document.createElement('input');
+  inputImagem.type = 'file';
+  inputImagem.accept = 'image/*';
+  inputImagem.addEventListener('change', function(event) {
+    const arquivo = event.target.files[0];
+    const leitor = new FileReader();
+    leitor.onload = function(e) {
+      campoImagem.src = e.target.result;
+    };
+    leitor.readAsDataURL(arquivo);
+  });
+  inputImagem.click();
 });
