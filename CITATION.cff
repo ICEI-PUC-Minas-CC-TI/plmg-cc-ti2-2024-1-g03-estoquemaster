@@ -2,30 +2,26 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Glatz Campos
+    given-names: Gabriel
+  - family-names: Nunes Bello
+    given-names: Mateus
+  - family-names: Pereira Gonsalves
+    given-names: Matheus
+  - family-names: Henrique Vieira Pinto
+    given-names: Nalberth
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Do Val Machado
+    given-names: Max
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Ferreira Carvalho
+    given-names: Walisson
 keywords:
   - 
   - 
-repository-code: 
+repository-code: https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2024-1-g03-estoquemaster
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
